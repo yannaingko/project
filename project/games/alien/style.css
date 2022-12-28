@@ -1,0 +1,135 @@
+/*CANVAS LAYOUT*/
+*
+{
+    margin     : 0;
+    padding    : 0;                            
+    box-sizing : border-box;
+}
+
+/*FONT WHICH WILL BE USED IN THE DOCUMENT.*/
+body
+{
+    font-family : 'Helvetica';
+}
+
+/*GAME CANVAS ALONG WITH THE BACKGROUND.*/
+.wrapper
+{
+    border           : 3px solid #010124;
+    width            : 800px;
+    height           : 600px;
+    position         : absolute;
+    top              : 50%;
+    left             : 50%;
+    transform        : translate(-50%, -50%);
+    background-image : url('images/background.png');
+    overflow         : hidden;
+}
+
+/*SCORE*/
+.score
+{
+    font-size  : 150px;
+    color      : #010124;
+    position   : absolute;
+    top        : 55%;
+    left       : 50%;
+    transform  : translate(-50%, -50%);
+    width      : 200px;
+    height     : 100px;
+    text-align : center;
+}
+
+/*COUNTDOWN TIMER*/
+.countdown
+{
+    position    : absolute;
+    top         : 485px;
+    width       : 100%;
+    font-size   : 20px;
+    font-weight : bold;
+    text-align  : center;
+    color       : #010124;
+}
+
+/*PLAY BUTTON*/
+button
+{
+    font-size     : 20px;
+    position      : absolute;
+    bottom        : 10px;
+    left          : 50%;
+    transform     : translate(-50%, 0);
+    background    : #010124;
+    color         : white;
+    padding       : 20px 50px;
+    border-radius : 10px;
+    z-index       : 200;
+    cursor        : pointer;
+}
+
+/*INPUT AREA ON THE GAME CANVAS.*/
+.game
+{
+    width     : 600px;
+    height    : 400px;
+    margin    : 70px auto;
+    z-index   : 200;
+    display   : flex;
+    flex-wrap : wrap;
+}
+
+/*AREA FROM WHICH THE ALIENS WILL POP OUT FROM.*/
+.hole
+{
+    flex     : 1 0 33.33%;
+    position : relative;
+    overflow : hidden;
+}
+
+/*POSITIONING OF CHEST ELEMENTS. ALIENS WILL POP OUT FROM BEHIND THEM.*/
+.hole:after
+{
+    pointer-events   : none;
+    content          : '';
+    display          : block;
+    background-image : url('images/obstacle.png');
+    position         : absolute;
+    width            : 100%;
+    height           : 110px;
+    z-index          : 2;
+    bottom           : -40px;
+    background-size  : contain;
+}
+
+/*POSITIONING OF THE ALIEN SPRITE.*/
+.mole
+{
+    background-image    : url('images/alien1.png');
+    position            : absolute;
+    top                 : 100%;
+    width               : 100%;
+    height              : 100%;
+    transition          : 0.3s;
+    background-repeat   : no-repeat;
+    background-position : bottom;
+    
+}
+
+/*SIZE OF ALIENS IN THE BACKGROUND.*/
+.mole.small
+{
+    background-size : 60%;
+}
+
+/*SIZE OF ALIENS IN THE FOREGROUND.*/
+.mole.large
+{
+    background-size : 80%;
+}
+
+/*THIS MAKES THE ALIEN PEEK OUT FROM THE CHESTS.*/
+.hole.up .mole
+{
+    top : 0;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body class="bg-dark">
+    <div class="row m-3 text-center text-white">
+        <div class="col"><a href="games/dice_game/dice.html"><img src="image/dice.png" height="110"></a><label>Dice game</label></div>
+        <div class="col"><a href="games/starwar/game.html"><img src="image/starwar.png" height="110" alt=""></a><br><label>Star War</label></div>
+        <div class="col"><a href="games/alien/index.html"><img src="image/alien.png" height="110px" alt=""></a><label>Smack IT</label></div>
+        <div class="col"><a href="ghostdashboard.html"><img src="image/bootstrap.png" alt="" height="110"></a><br><label>Bootstrap Design</label></div>
+    </div>
+    <div class="container">
+        <div class="hex"></div>
+        <div class="bg"></div>
+    </div>
+
+    <script>
+        document.onmousemove = animation;
+        const bg = document.querySelector('.bg');
+        function animation(event){
+            bg.style.left = event.clientX + 'px';
+            bg.style.top = event.clientY + 'px';
+        }
+    </script>
+</body>
+</html>

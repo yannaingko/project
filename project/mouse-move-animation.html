@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: black;
+        }
+        .circle{
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+            position: absolute;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.onmousemove = animation;
+        let colors = ['red','blue','yellow'];
+        function animation (event) {
+
+            // To add new div in body for every moment
+            let circle = document.createElement('div');
+            circle.setAttribute('class','circle');
+            document.body.appendChild(circle);
+
+            // catch mouse movement  horizontal and vertical
+            circle.style.left = event.clientX+ 'px';
+            circle.style.top  = event.clientY+ 'px';
+
+            let color = colors [Math.floor(Math.random()*colors.length)]
+            circle.style.borderColor = color;
+
+            circle.style.transition = 'all 0.3s linear 0s'
+
+            circle.style.left = circle.offsetLeft - 20 + 'px'
+            circle.style.top = circle.offsetTop - 20 + 'px'
+
+            circle.style.width = '30px'
+            circle.style.height = '30px'
+            circle.style.borderWidth = '5px'
+            circle.style.opacity = 0
+
+            //  remove Elements after rendered to avoid overload
+
+            setTimeout(()=>{
+                circle.remove();
+            } 
+            ,300)
+
+        }
+    </script>
+</body>
+</html>

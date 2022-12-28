@@ -1,0 +1,36 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    min-height: 100vh;
+    background-color:black;
+}
+.container{
+    height: 100vh;
+}
+.hex{
+    background: url('../image/Hexagon.svg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: 500px;
+    z-index: 1;
+}
+.bg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 300px;
+    width: 300px;
+    background:linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+    filter: blur(20px);
+    z-index: 0;
+}
+.row{
+    position: absolute;
+    z-index: 10;
+}
